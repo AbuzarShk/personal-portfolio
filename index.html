@@ -125,66 +125,57 @@
 
 	  <section id="home-section" class="hero">
 		<div class="home-slider owl-carousel">
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img" style="height: 300px; background-image: url(images/bg_main.png);">
-							<div class="overlay"></div>
-						</div>
-						<div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Hello, Welcome to my Portfolio!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Abuzar Shaikh</span></h1>
-	
-								<!-- Element to contain animated typing -->
-								<span id="typing-animation"></span>
-	
-								<script>
-									// Initialize the typing animation
-									const typingAnimationElement = document.getElementById('typing-animation');
-	
-									// Create an array of typing text
-									const typingTexts = [
-										'Java Developer  ',
-										'Software Developer  ',
-										'Full Stack Developer  ',
-									];
-	
-									// Create a function to display the typing animation for a given text
-									function playTypingAnimation(text) {
-										// Loop through each character and add it to the element
-										for (let i = 0; i < text.length; i++) {
-											setTimeout(() => {
-												typingAnimationElement.textContent += text[i];
-											}, i * 200); // Increase the delay to slow down the typing animation
-										}
-	
-										// Once the animation is complete, reset the text and start over
-										setTimeout(() => {
-											typingAnimationElement.textContent = '';
-											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-										}, text.length * 200 + 1000); // Adding delay before next animation
-									}
-	
-									// Start the typing animation loop
-									playTypingAnimation(typingTexts[0]);
-								</script>
-	
-								<br>
-								<br>
-								<h2>A Certified Java Developer</h2>
-								<h2 class="d-flex" style="margin-bottom: 0">With over 3 years of experience in software development</h2>
-								<p>
-									<a href="https://www.linkedin.com/in/abuzar-shaikh-2b0560201/" class="btn btn-primary py-3 px-4">LinkedIn</a>
-									<a href="https://github.com/AbuzarShk/NewsApplication" class="btn btn-primary py-3 px-4">My Works</a>
-								</p> <!-- for white and black button btn btn-white btn-outline-white py-3 px-4-->
-							</div>
-						</div>
+			<div class="slider-item">
+			  <div class="overlay"></div>
+			  <div class="container">
+				<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+				  <div class="one-third js-fullheight order-md-last img" style="height: 300px; background-image: url(images/bg_main.png);">
+					<div class="overlay"></div>
+				  </div>
+				  <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
+					<div class="text">
+					  <span class="subheading">Hello, Welcome to my Portfolio!</span>
+					  <h1 class="mb-4 mt-3">I'm <span>Abuzar Shaikh</span></h1>
+		  
+					  <!-- Typing Animation -->
+					  <span id="typing-animation"></span>
+		  
+					  <script>
+						const typingTexts = ['Full Stack Developer', 'Software Developer', 'Java Developer','Devops Engineer'];
+						const typingAnimationElement = document.getElementById('typing-animation');
+		  
+						let textIndex = 0, charIndex = 0;
+		  
+						function typeText() {
+						  if (charIndex < typingTexts[textIndex].length) {
+							typingAnimationElement.textContent += typingTexts[textIndex][charIndex++];
+							setTimeout(typeText, 150); // Typing speed
+						  } else {
+							setTimeout(() => {
+							  typingAnimationElement.textContent = '';
+							  charIndex = 0;
+							  textIndex = (textIndex + 1) % typingTexts.length;
+							  typeText();
+							}, 1000); // Delay before next text
+						  }
+						}
+		  
+						typeText();
+					  </script>
+		  
+					  <h2>A Certified Java Developer</h2>
+					  <h2 class="d-flex" style="margin-bottom: 0">With over 3 years of experience in software development</h2>
+					  <p>
+						<a href="https://www.linkedin.com/in/abuzar-shaikh-2b0560201/" class="btn btn-primary py-3 px-4">LinkedIn</a>
+						<a href="https://github.com/AbuzarShk/" class="btn btn-primary py-3 px-4">My Works</a>
+					  </p>
 					</div>
+				  </div>
 				</div>
+			  </div>
 			</div>
-		</div>
+		  </div>
+		  
 	</section>
 	
 	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
@@ -198,9 +189,9 @@
 									<div class="about-info">
 										<h3>Contact Information</h3>
 										<p><strong>Name:</strong> Abuzar Shaikh</p>
-										<p><strong>Job Role:</strong> Java Developer</p>
-										<p><strong>Experience:</strong> 3 years</p>
-										<p><strong>Location:</strong> Toronto, Canada</p>
+										<p><strong>Job Role:</strong> Software Developer/Devops Engineer </p>
+										<p><strong>Experience:</strong> 3+ years</p>
+										<p><strong>Location:</strong> Ontario, Canada</p>
 									</div>
 								</div>
 							</div>
@@ -208,39 +199,33 @@
 							<div class="skill-mf">
 								<h3>Skills</h3>
 								<div class="skill-item">
-									<span>Java</span> <span class="pull-right">80%</span>
+									<span>Spring Frameworks</span> <span class="pull-right">80%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 								<div class="skill-item">
-									<span>Spring Boot</span> <span class="pull-right">75%</span>
+									<span>JavaScript Frameworks</span> <span class="pull-right">75%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 								<div class="skill-item">
-									<span>React</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-								</div>
-								<div class="skill-item">
-									<span>SQL</span> <span class="pull-right">80%</span>
+									<span>Database Management</span> <span class="pull-right">80%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 								<div class="skill-item">
-									<span>Kafka</span> <span class="pull-right">75%</span>
+									<span>AI & Data Science</span> <span class="pull-right">65%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 								<div class="skill-item">
-									<span>Python</span> <span class="pull-right">65%</span>
+									<span>DevOps & Cloud</span> <span class="pull-right">75%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 							</div>
@@ -252,23 +237,21 @@
 					<div class="about-content">
 						<h2>About Me</h2>
 						<p>
-							Hello! I'm Abuzar Shaikh, a dedicated Java Developer with over 3 years of experience in building robust applications using Java, Spring Boot, and front-end technologies like React. I am passionate about delivering high-quality software solutions while ensuring performance and scalability.
-						</p>
-						<p>
-							My strong background in Agile methodologies has enabled me to successfully collaborate with cross-functional teams to achieve project goals. I have expertise in database management, working with both SQL and NoSQL technologies, and experience in using Kafka for event-driven architecture.
-						</p>
-						<p>
-							I hold a Post-Graduation in Computer Software and Database Development from Loyalist College in Toronto and a Bachelor of Engineering in Computer Engineering from Mumbai University. I'm always eager to enhance my skills and contribute to innovative projects that push the boundaries of technology.
+							Dedicated Software Developer with over 3+ years of experience designing, building, and deploying
+							scalable, cloud-native applications using Java and Spring Boot. Proven expertise in microservices
+							architecture, secure APIs, and DevOps practices. Adapt at delivering high-performance software
+							solutions in agile environments while enhancing system reliability and scalability. Recognized for
+							optimizing application performance by up to 35% and reducing response times by 40%.
 						</p>
 	
 						<h3>Additional Information</h3>
 						<ul class="about-info mt-4 px-md-0 px-2">
 							<li class="d-flex"><span><strong>Profile:</strong></span> <span>Software Developer</span></li>
 							<li class="d-flex"><span><strong>Domain:</strong></span> <span>Manufacturing, Finance, Sales & Healthcare</span></li>
-							<li class="d-flex"><span><strong>Languages:</strong></span> <span>English, Hindi, French, Urdu</span></li>
-							<li class="d-flex"><span><strong>Technical Skills:</strong></span> <span>C, C++, C#, Java (11/17), Python, React, PHP, SQL, NoSQL (MongoDB), Postgres, Spark, Airflow</span></li>
+							<li class="d-flex"><span><strong>Languages:</strong></span> <span>English, French(Basic)</span></li>
+							<li class="d-flex"><span><strong>Technical Skills:</strong></span> <span>Java (11/17), Spring Boot, Microservices, Python, React, SQL, NoSQL (MongoDB), Postgres, Spark, Airflow</span></li>
 							<li class="d-flex"><span><strong>Cloud & DevOps:</strong></span> <span>MS Azure, Docker, Kubernetes, CI/CD Pipelines, Git, Bitbucket</span></li>
-							<li class="d-flex"><span><strong>Tools:</strong></span> <span>JIRA, Postman, PowerBI, Selenium, Jenkins</span></li>
+							<li class="d-flex"><span><strong>Frameworks & Tools:</strong></span> <span>Spring Framework, Spring Security, Apache Camel, JIRA, Postman, PowerBI, Selenium, Jenkins, IntelliJ, Eclipse</span></li>
 							<li class="d-flex"><span><strong>Interests:</strong></span> <span>Sports, Traveling, Reading</span></li>
 						</ul>
 					</div>
@@ -284,7 +267,6 @@
 				<div class="col-md-10 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Resume</h1>
 					<h2 class="mb-4">Resume</h2>
-					<p>Dedicated Software Developer with 2+ years of experience in building cloud-native applications using Java and Spring Boot. Proven track record in optimizing performance and implementing secure, scalable solutions. Strong skills in microservices architecture, CI/CD, and agile methodologies, complemented by a solid foundation in DBMS and DevOps practices.</p>
 					<div class="row justify-content-center mt-5">
 						<div class="col-md-6 text-center ftco-animate">
 							<p><a href="https://drive.google.com/file/d/1UYtw7rNYcXGPwXYGSn_EEXspwgHOTbrC/view" class="btn btn-primary py-3 px-3">Download Resume</a></p>
@@ -308,32 +290,44 @@
 						<span class="date">NOV 2021 - APR 2023</span>
 						<h2>Software Developer</h2>
 						<span class="position">Bureau Veritas, Mumbai, India</span>
-						<p class="mt-4">Bureau Veritas is a global leader in testing, inspection, and certification. Developed cloud-native applications with a focus on performance and scalability.</p>
 						<ul>
-							<li>Built cloud-native, message-driven applications using Java Spring Boot and Scala, boosting performance by 30% and scalability by 40%.</li>
-							<li>Deployed microservices with Docker and Kubernetes, improving resource utilization by 20% and reducing deployment time by 30%.</li>
-							<li>Implemented JUnit and Mockito tests, reducing production bugs by 15%. Integrated Jenkins, cutting deployment time by 60%.</li>
-							<li>Strengthened security protocols using OAuth and JWT, reducing unauthorized access by 40%.</li>
-							<li>Integrated Kafka for messaging, increasing throughput by 30%.</li>
+							<li>Optimized Development: Engineered high-performance Java applications (Java 11/17) using Spring Boot, boosting system scalability by 40% and efficiency by 30%.</li>
+							<li>Streamlined microservices architecture with Docker and Kubernetes, reducing release times by 30% and enhancing resource utilization by 20%.</li>
+							<li>Designed automated Jenkins pipelines, accelerating delivery timelines by 60%, with rigorous unit testing via JUnit 5 and Mockito to enhance reliability.</li>
+							<li>Optimized database queries with NoSQL, cutting data processing overhead by 50% and increasing query efficiency by 35%.</li>
+							<li>Strengthened system security with OAuth and JWT, reducing unauthorized access by 40% while integrating Kafka for a 30% boost in throughput.</li>
 						</ul>
 					</div>
 				</div>
-	
+			
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
 						<span class="date">MAY 2021 - OCT 2021</span>
 						<h2>Software Developer Intern</h2>
 						<span class="position">Credence Analytics, Mumbai, India</span>
-						<p class="mt-4">Contributed to enterprise applications and gained hands-on experience in various software development practices.</p>
 						<ul>
-							<li>Created and optimized RESTful APIs for efficient frontend-backend communication.</li>
-							<li>Optimized database queries, improving application performance by 15%.</li>
-							<li>Developed secure authentication and authorization mechanisms, ensuring robust user data privacy.</li>
-							<li>Identified and resolved bottlenecks, reducing response time by 20%.</li>
+							<li>Enhanced Investment Management: Integrated front-office and back-office operations, improving operational efficiency by 25%.</li>
+							<li>Reduced TCO by 30% and boosted scalability using Python and DevOps tools for seamless cloud deployments.</li>
+							<li>Streamlined regulatory workflows, increasing compliance adherence by 40%.</li>
+							<li>Developed omni-channel interfaces, driving a 20% increase in client engagement.</li>
 						</ul>
 					</div>
 				</div>
-			</div>
+			
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">MAY 2020 - APRIL 2021</span>
+						<h2>DevOps Engineer</h2>
+						<span class="position">Maxgen Technologies, Remote</span>
+						<ul>
+							<li>CI/CD Optimization: Automated pipelines with Jenkins and GitLab CI, increasing deployment frequency by 30% and reducing manual effort by 50%.</li>
+							<li>Provisioned AWS infrastructure using Terraform, cutting setup time by 40% and minimizing manual errors by 25%.</li>
+							<li>Implemented Prometheus and Grafana, reducing downtime by 30% and improving application availability by 20%.</li>
+							<li>Integrated OWASP ZAP in the CI/CD pipeline, improving vulnerability detection by 35% and ensuring secure deployments.</li>
+						</ul>
+					</div>
+				</div>
+			</div>			
 	
 			<br>
 			<br>
@@ -350,7 +344,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
-						<span class="date">2023 - Present</span>
+						<span class="date">May 2023 -December 2024</span>
 						<h2>Post-Graduation in Computer Software and Database Development</h2>
 						<span class="position">Loyalist College, Toronto, Canada</span>
 					</div>
@@ -492,7 +486,7 @@
 				  <span class="icon-globe"></span>
 				</div>
 				<h3 class="mb-4">Download Resume</h3>
-				<p><a href="https://drive.google.com/file/d/1UYtw7rNYcXGPwXYGSn_EEXspwgHOTbrC/view">Click Here</a></p>
+				<p><a href="https://drive.google.com/file/d/1MzYhIY50ZfNqjrB1AbuANnvwo11qLaxk/view?usp=sharing">Click Here</a></p>
 			  </div>
 			</div>
 		  </div>
